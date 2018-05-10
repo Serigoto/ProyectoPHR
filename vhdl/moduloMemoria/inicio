@@ -1,0 +1,30 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity end_1 is
+port (
+       entrada: in std_logic_vector(7 downto 0);
+       salida: out std_logic);
+end end_1;
+
+architecture Behavioral of end_1 is
+
+    signal charInput:std_logic_vector(7 downto 0);
+    signal address: integer;
+    signal correct : std_logic;
+    
+    component memCompare 
+    port (
+    charInput : in std_logic_vector(7 downto 0);
+    address   : in integer range 0 to 25 ;
+    isCorrect : out std_logic
+  );
+  
+end component;
+begin
+
+process(entrada, salida,)
+address<=4;
+UI: memCompare port map(entrada,address,correct);
+
+end Behavioral;
